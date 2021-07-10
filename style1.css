@@ -1,0 +1,283 @@
+:root{
+  --background: rgba(0, 214, 170, .85);
+
+  --clr-primary-200: #f3eed9;
+  --clr-primary-400: red;
+
+  --clr-neutral-100: #fff;
+  --clr-neutral-900: #222c2a;
+
+  --ff-primary: 'Raleway', sans-serif;
+  --ff-accent: "Playfair Display", serif;
+
+
+}
+
+*, *::before, *after::{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family: var(--ff-primary);
+  font-size: 1.rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.image{
+  background-image: url(../img/bg3.jpg);
+  width:100%;
+ }
+
+.content{
+  height: 200vh;
+  background-image:image(bground.jpeg);
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+
+}
+/* nav style starts*/
+
+header{
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width:100%;
+}
+
+.nav-toggle{
+  display: none;
+}
+
+.nav-toggle-label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height:2px;
+  width:2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before{
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after{
+  top: 7px;
+}
+
+nav{
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left:0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1 , 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+ }
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover{
+  color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+ transform: scale(1, 1);
+
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+@media screen and (min-width:800px) {
+  .nav-toggle-label {
+    display: none;
+
+  }
+
+  header {
+    display:grid;
+    grid-template-columns :1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo{
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul{
+    display: flex;
+  }
+
+  nav li{
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a{
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before{
+    content: '';
+    display: block;
+    height:5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left:0;
+    right:0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before{
+    transform: scale(1,1);
+  }
+}
+
+
+}
+body,
+h1,
+h2,
+h3,
+p {
+  margin:0;
+}
+
+h2,
+h3 {
+  color: var(--clr-primary-400)
+  line-height: 1;
+  font-family: var(--ff-accent);
+  font-weight: 900;
+}
+
+h2,
+h3,
+p {
+  margin-bottom: 1em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+section {
+  padding: 4rem 0;
+  @media (min-width: 40em) {
+    header,
+    section {
+      padding: 7rem 0;
+    }
+  }
+}
+
+.container {
+  margin-inline: auto;
+  width: min(90%, 70.5rem);
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+  }
+
+  .split > * {
+    flex-basis: 100%;
+  }
+
+  .split > * + * {
+    margin-left: 2em;
+  }
+}
+
+.container--narrow {
+  max-width: 34rem;
+}
+
+.bg-light {
+  background-color: var(--clr-primary-200);
+}
+
+.bg-primary {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+}
+
+.bg-dark {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+}
+
+.bg-primary h2,
+.bg-dark h2 {
+  color: var(--clr-primary-200);
+}

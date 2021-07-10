@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style1.css">
+
+    <title>Contact me</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;900&display=swap" rel="stylesheet">
+
+    <style media="screen">
+      #container, #contact {
+        font-family: 'Raleway' , sans-serif;
+      }
+
+      #container{
+        text-align: center;
+        background-color: ##824936;
+        padding: 10vh;
+        align-items: center;
+       }
+
+      #contact{
+
+        align-items: center;
+        color: white;
+        text-align: center;
+        background-color: #222c2a;
+        padding: 2vh;
+        padding-top: 10vh;
+        margin-left: 50;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">SmileyS</h1>
+      <input type="checkbox"  id="nav-toggle"  class="nav-toggle">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+             <li><a href="contact.html">Contact</a></li>
+
+          </ul>
+         </nav>
+        <label for="nav-toggle" class="nav-toggle-label">
+           <span></span>
+         </label>
+    </header>
+
+    <div id="contact">
+      <h2>Contact me</h2>
+      <table cellspacing="35">
+        <tr>
+          <td>Phone</td>
+          <td>9381149431</td>
+          <td>9848098774</td>
+        </tr>
+        <tr>
+          <td>E-mail</td>
+          <td>mohith.pedduru318@gmail.com</td>
+          <td>mohithsai987@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>#SardarStreet<br>Door no:532/1a/62<br>Opposite to State Bank of India,Vidhyanagar<br>Bengaluru </td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <div id="container" >
+            <h2>Your Details</h2>
+            <form class="contact-form" action="mailto:mohith.pedduru318@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="email">Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="Name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="password">E-mail</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="E-mail">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="password">Subject</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="Subject">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="password">Message</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="Message">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-9 offset-sm-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </form
+
+        </div>
+  </body>
+</html>
